@@ -80,6 +80,8 @@ def generate_grid(row, pitch, steps=80):
 # Run values are then converted to a more interpretable Pitch+ value
 def predict_loc_grid(df_grid, grid_shape, pitch, p_hand, b_side, features, pitches_plus):
 
+    pitch = pitch.lower()
+
     # If our model has not already been used (cached)
     if (pitch, p_hand, b_side) not in MODELS_CACHE:
         # Open pre-trained model for equivalent pitch group / pitcher handedness / batter stance
