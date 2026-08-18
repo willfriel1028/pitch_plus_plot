@@ -211,16 +211,16 @@ with d1:
     p_hand = st.selectbox("Pitcher Hand", options=sides)
 # Release speed input
 with c2:
-    release_speed = st.number_input("Release Velocity (mph)", value=None, step=1)
+    release_speed = st.number_input("Release Velocity (mph)", value=None, step=0.1)
 # Spin rate input
 with d2:
     spin_rate = st.number_input("Spin Rate (rpm)", value=None, step=10)
 # IVB input
 with c3:
-    ivb = st.number_input("Induced Vertical Break (in)", value=None, step=1)
+    ivb = st.number_input("Induced Vertical Break (in)", value=None, step=0.1)
 # HB input
 with d3:
-    hb = st.number_input("Horizontal Break (in)", value=None, step=1)
+    hb = st.number_input("Horizontal Break (in)", value=None, step=0.1)
 # Release height input
 with c4:
     release_height = st.number_input("Release Height (ft)", value=None, step=0.1)
