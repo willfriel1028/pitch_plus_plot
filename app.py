@@ -79,7 +79,7 @@ def predict_loc_grid(df_grid, grid_shape, pitch, p_hand, b_side, features, pitch
     # If our model has not already been used (cached)
     if (pitch, p_hand, b_side) not in MODELS_CACHE:
         # Open pre-trained model for equivalent pitch group / pitcher handedness / batter stance
-        with open(f'models/train_only/{pitch}/{pitch}_{p_hand}HP_{b_side}HB_alldata.pkl', 'rb') as f:
+        with open(f'models/train_only/{pitch}/{pitch}_{p_hand}HP_{b_side}HB.pkl', 'rb') as f:
             # Load model
             MODELS_CACHE[(pitch, p_hand, b_side)] = pickle.load(f)
     # If our model has already been used, call it back
