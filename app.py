@@ -231,7 +231,7 @@ with d5:
     arm_angle = st.number_input("Arm Angle (degrees)", value=None, step=1)
 # FB Velo input
 with c6:
-    fb_velo = st.number_input("Fastball Velo (for breaking and offspeed) (mph)", value=None, step=1)
+    fb_velo = st.number_input("Fastball Velo (for breaking and offspeed) (mph)", value=None, step=0.1)
 
 # Create dict to store user-input values
 values = {}
