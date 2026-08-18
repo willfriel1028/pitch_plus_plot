@@ -194,8 +194,8 @@ def fig_to_buf(fig):
 st.title("Pitching+ Landscape on Pitch Location Plot")
 
 # Create columns for our dropdowns/input boxes where user can fill in metrics
-c1, c2, c3, c4, c5, c6 = st.columns([1,1,1,1,1,1,1])
-d1, d2, d3, d4, d5, d6 = st.columns([1,1,1,1,1,1,1])
+c1, c2, c3, c4, c5, c6 = st.columns([1,1,1,1,1,1])
+d1, d2, d3, d4, d5, d6 = st.columns([1,1,1,1,1,1])
 
 # Pitch type selection
 with c1:
