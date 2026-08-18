@@ -194,8 +194,8 @@ def fig_to_buf(fig):
 st.title("Pitching+ Landscape on Pitch Location Plot")
 
 # Create columns for our dropdowns/input boxes where user can fill in metrics
-c1, c2, c3, c4, c5, c6, c7 = st.columns([1,1,1,1,1,1,1])
-d1, d2, d3, d4, d5, d6, d7 = st.columns([1,1,1,1,1,1,1])
+c1, c2, c3, c4, c5, c6 = st.columns([1,1,1,1,1,1,1])
+d1, d2, d3, d4, d5, d6 = st.columns([1,1,1,1,1,1,1])
 
 # Pitch type selection
 with c1:
@@ -230,7 +230,7 @@ with c5:
 with d5:
     arm_angle = st.number_input("Arm Angle (degrees)", value=None, step=1)
 # FB Velo input
-with c7:
+with c6:
     fb_velo = st.number_input("Fastball Velo (for breaking and offspeed) (mph)", value=None, step=1)
 
 # Create dict to store user-input values
@@ -267,7 +267,7 @@ else:
     features = ["release_speed", "release_height", "release_side", "arm_angle", "release_extension", "ivb", "hb", "spin_rate", "plate_x", "plate_z", "fb_velo"]
 
 # Create button to run program
-with d7:
+with d6:
     button = st.button("Go")
 
 # Read in previously calculated parquet containing run values of each pitcher / pitch type / batter side combination based on stuff and location
