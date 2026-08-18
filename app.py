@@ -49,8 +49,6 @@ def generate_grid(row, pitch, steps=80):
             'ivb':                 row['ivb'].iloc[0],
             'hb':                  row['hb'].iloc[0],
             'spin_rate':           row['spin_rate'].iloc[0],
-            'vaa':                 row['vaa'].iloc[0],
-            'haa':                 row['haa'].iloc[0],
             'plate_x':             platex_grid.ravel(),
             'plate_z':             platez_grid.ravel(),
         })
@@ -66,8 +64,6 @@ def generate_grid(row, pitch, steps=80):
             'ivb':                 row['ivb'].iloc[0],
             'hb':                  row['hb'].iloc[0],
             'spin_rate':           row['spin_rate'].iloc[0],
-            'vaa':                 row['vaa'].iloc[0],
-            'haa':                 row['haa'].iloc[0],
             'plate_x':             platex_grid.ravel(),
             'plate_z':             platez_grid.ravel(),
             'fb_velo':             row['fb_velo'].iloc[0],
@@ -233,12 +229,6 @@ with c5:
 # Arm angle input
 with d5:
     arm_angle = st.number_input("Arm Angle (degrees)", value=None, step=1)
-# VAA input
-with c6:
-    vaa = st.number_input("Vertical Approach angle (degrees)", value=None, step=0.1)
-# HAA input
-with d6:
-    haa = st.number_input("Horizontal Approach angle (degrees)", value=None, step=0.1)
 # FB Velo input
 with c7:
     fb_velo = st.number_input("Fastball Velo (for breaking and offspeed) (mph)", value=None, step=1)
@@ -255,8 +245,6 @@ values["release_height"] = release_height
 values["release_side"] = release_side
 values["release_extension"] = release_extension
 values["arm_angle"] = arm_angle
-values["vaa"] = vaa
-values["haa"] = haa
 values["fb_velo"] = fb_velo
 
 # Convert dict to dataframe so it can be used in our prediction function
@@ -274,9 +262,9 @@ elif pitch_type in ["SL", "ST", "SV", "CU", "KC", "CS"]:
 
 # Define features
 if pitch == "FB" or pitch == "FC":
-    features = ["release_speed", "release_height", "release_side", "arm_angle", "release_extension", "ivb", "hb", "spin_rate", "vaa", "haa", "plate_x", "plate_z"]
+    features = ["release_speed", "release_height", "release_side", "arm_angle", "release_extension", "ivb", "hb", "spin_rate", "plate_x", "plate_z"]
 else:
-    features = ["release_speed", "release_height", "release_side", "arm_angle", "release_extension", "ivb", "hb", "spin_rate", "vaa", "haa", "plate_x", "plate_z", "fb_velo"]
+    features = ["release_speed", "release_height", "release_side", "arm_angle", "release_extension", "ivb", "hb", "spin_rate", "plate_x", "plate_z", "fb_velo"]
 
 # Create button to run program
 with d7:
